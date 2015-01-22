@@ -45,11 +45,11 @@
             // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Location = new System.Drawing.Point(40, 107);
+            this.btnOpenFile.Location = new System.Drawing.Point(12, 81);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(132, 50);
             this.btnOpenFile.TabIndex = 0;
-            this.btnOpenFile.Text = "button1";
+            this.btnOpenFile.Text = "Open File";
             this.btnOpenFile.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -63,11 +63,11 @@
             // 
             // btnSetFileAssociations
             // 
-            this.btnSetFileAssociations.Location = new System.Drawing.Point(40, 179);
+            this.btnSetFileAssociations.Location = new System.Drawing.Point(12, 148);
             this.btnSetFileAssociations.Name = "btnSetFileAssociations";
             this.btnSetFileAssociations.Size = new System.Drawing.Size(132, 50);
             this.btnSetFileAssociations.TabIndex = 2;
-            this.btnSetFileAssociations.Text = "button2";
+            this.btnSetFileAssociations.Text = "Set file associations";
             this.btnSetFileAssociations.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -80,7 +80,7 @@
             this.groupBox1.Controls.Add(this.checkBox4);
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(209, 12);
+            this.groupBox1.Location = new System.Drawing.Point(208, 22);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(110, 217);
             this.groupBox1.TabIndex = 6;
@@ -171,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 261);
+            this.ClientSize = new System.Drawing.Size(367, 261);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSetFileAssociations);
             this.Controls.Add(this.label1);
