@@ -34,5 +34,7 @@ namespace YACUNT
 
             MessageBox.Show("Opening format " + extension);
         }
+
+        // TODO: option to register file handler with system
     }
 }
