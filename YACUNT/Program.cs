@@ -19,12 +19,12 @@ namespace YACUNT
 
             if (args.Length == 0)
             {
-                // Display file open dialog
-                // set fileName
+                Application.Run(new frmDefault());
+                // Set file name if they chose to open a file, otherwise return
+                return;
             }
-            else fileName = args[0];
 
-            if (string.IsNullOrEmpty(fileName)) return; // errors here
+            fileName = fileName ?? args[0];
             if (!File.Exists(fileName)) return; // errors here
 
             var extension = Path.GetExtension(args[0]);
