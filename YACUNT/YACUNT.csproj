@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileAssociationManager.cs" />
     <Compile Include="frmDefault.cs">
       <SubType>Form</SubType>
     </Compile>
