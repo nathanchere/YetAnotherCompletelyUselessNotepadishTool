@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 
 namespace YACUNT
 {
@@ -13,7 +7,6 @@ namespace YACUNT
     /// </todo>
     public static class FileAssociationManager
     {
-
         /// <summary>
         /// Create or update a file association in Windows
         /// </summary>
@@ -59,7 +52,5 @@ namespace YACUNT
                 key.DeleteSubKey("UserChoice", false);
             }
         }
-
-        
     }
 }

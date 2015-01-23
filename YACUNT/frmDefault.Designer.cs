@@ -31,16 +31,15 @@
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSetFileAssociations = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.groupFileTypes = new System.Windows.Forms.GroupBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.groupFileTypes.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOpenFile
@@ -63,79 +62,29 @@
             // 
             // btnSetFileAssociations
             // 
-            this.btnSetFileAssociations.Location = new System.Drawing.Point(12, 148);
+            this.btnSetFileAssociations.Location = new System.Drawing.Point(208, 215);
             this.btnSetFileAssociations.Name = "btnSetFileAssociations";
-            this.btnSetFileAssociations.Size = new System.Drawing.Size(132, 50);
+            this.btnSetFileAssociations.Size = new System.Drawing.Size(110, 34);
             this.btnSetFileAssociations.TabIndex = 2;
             this.btnSetFileAssociations.Text = "Set file associations";
             this.btnSetFileAssociations.UseVisualStyleBackColor = true;
+            this.btnSetFileAssociations.Click += new System.EventHandler(this.btnSetFileAssociations_Click);
             // 
-            // groupBox1
+            // groupFileTypes
             // 
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Controls.Add(this.checkBox7);
-            this.groupBox1.Controls.Add(this.checkBox8);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(208, 22);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(110, 217);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "File types";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 46);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 23);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 92);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(80, 17);
-            this.checkBox3.TabIndex = 8;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(6, 69);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(80, 17);
-            this.checkBox4.TabIndex = 7;
-            this.checkBox4.Text = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(6, 182);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(80, 17);
-            this.checkBox5.TabIndex = 12;
-            this.checkBox5.Text = "checkBox5";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.groupFileTypes.Controls.Add(this.checkBox6);
+            this.groupFileTypes.Controls.Add(this.checkBox7);
+            this.groupFileTypes.Controls.Add(this.checkBox8);
+            this.groupFileTypes.Controls.Add(this.checkBox3);
+            this.groupFileTypes.Controls.Add(this.checkBox4);
+            this.groupFileTypes.Controls.Add(this.checkBox2);
+            this.groupFileTypes.Controls.Add(this.checkBox1);
+            this.groupFileTypes.Location = new System.Drawing.Point(208, 22);
+            this.groupFileTypes.Name = "groupFileTypes";
+            this.groupFileTypes.Size = new System.Drawing.Size(110, 187);
+            this.groupFileTypes.TabIndex = 6;
+            this.groupFileTypes.TabStop = false;
+            this.groupFileTypes.Text = "File types";
             // 
             // checkBox6
             // 
@@ -167,12 +116,52 @@
             this.checkBox8.Text = "checkBox8";
             this.checkBox8.UseVisualStyleBackColor = true;
             // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(6, 92);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(39, 17);
+            this.checkBox3.TabIndex = 8;
+            this.checkBox3.Text = "ics";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(6, 69);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(41, 17);
+            this.checkBox4.TabIndex = 7;
+            this.checkBox4.Text = "vcf";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(6, 46);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(42, 17);
+            this.checkBox2.TabIndex = 6;
+            this.checkBox2.Text = "ical";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 23);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(41, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "nfo";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // frmDefault
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(367, 261);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupFileTypes);
             this.Controls.Add(this.btnSetFileAssociations);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOpenFile);
@@ -180,8 +169,8 @@
             this.MinimizeBox = false;
             this.Name = "frmDefault";
             this.Text = "YACUNT";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupFileTypes.ResumeLayout(false);
+            this.groupFileTypes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,8 +181,7 @@
         private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSetFileAssociations;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.GroupBox groupFileTypes;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.CheckBox checkBox8;
