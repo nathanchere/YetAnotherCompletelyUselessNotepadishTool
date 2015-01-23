@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.listEvents = new System.Windows.Forms.ListBox();
+            this.panelInfo = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // listEvents
@@ -39,11 +40,22 @@
             this.listEvents.Name = "listEvents";
             this.listEvents.Size = new System.Drawing.Size(182, 256);
             this.listEvents.TabIndex = 0;
+            this.listEvents.DoubleClick += new System.EventHandler(this.listEvents_DoubleClick);
+            // 
+            // panelInfo
+            // 
+            this.panelInfo.AutoScroll = true;
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelInfo.Location = new System.Drawing.Point(182, 0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(560, 256);
+            this.panelInfo.TabIndex = 1;
             // 
             // CalendarControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.listEvents);
             this.Name = "CalendarControl";
             this.Size = new System.Drawing.Size(742, 256);
@@ -54,5 +66,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox listEvents;
+        private System.Windows.Forms.Panel panelInfo;
     }
 }

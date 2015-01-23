@@ -22,8 +22,37 @@ namespace YACUNT.Controls
             _calendar = calendar;
             calendar.EventList.ForEach(e =>
             {
-                listEvents.Items.Add(e.DateTimeStamp.Value);
+                listEvents.Items.Add(e);
             });
+        }
+
+        private void listEvents_DoubleClick(object sender, EventArgs e)
+        {
+            var entry = listEvents.SelectedItem;
+            if (entry == null) return;
+
+            panelInfo.Controls.Clear();
+
+            AddPanel("When", "12.1.1");
+            AddPanel("Test", "My event ");
+        }
+
+        private void AddPanel(string caption, string value)
+        {
+            var panel = new Panel();
+            panelInfo.Controls.Add(panel);
+            panel.Dock = DockStyle.Top;
+
+            var label = new Label();
+            label.Text = caption;
+            panel.Controls.Add(label);
+
+            var label2 = new Label();
+            label2.Text = value;
+            panel.Controls.Add(label2);
+            label2.Left = label.Width + 10;
+
+            panel.Height = label.Height + 4;
         }
     }
 }
