@@ -13,12 +13,13 @@ namespace YACUNT.UI
         {
             InitializeComponent();
 
-            _fileName = filename;
-            Open();
+            _fileName = filename;            
         }
 
         private void Open()
         {
+            tabControl.TabPages.Clear();
+
             try
             {
                 var result = new iCalParser().ParseFile(_fileName);
@@ -27,6 +28,16 @@ namespace YACUNT.UI
                     MessageBox.Show("No calendars found");
                     return;
                 }
+
+                int count = 0;
+                foreach (var calendar in result.CalendarList)
+                {
+                    var page = new TabPage {
+                        Text = (++count).ToString(),
+                    };
+                    tabControl.TabPages.Add(page);
+                }
+
             }
             catch (Exception ex)
             {
@@ -38,6 +49,8 @@ namespace YACUNT.UI
         private void ics_Load(object sender, System.EventArgs e)
         {
             menuStrip.LostFocus += (o, args) => menuStrip.Visible = false;
+
+            Open();            
         }
 
         private void ics_KeyDown(object sender, KeyEventArgs e)

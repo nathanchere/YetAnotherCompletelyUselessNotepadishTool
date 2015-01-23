@@ -1,4 +1,4 @@
-﻿namespace YACUNT.UI
+﻿namespace YACUNT.Forms
 {
     partial class nfo
     {

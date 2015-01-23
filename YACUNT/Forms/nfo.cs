@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 
-namespace YACUNT.UI
+namespace YACUNT.Forms
 {
     public partial class nfo : Form
     {
