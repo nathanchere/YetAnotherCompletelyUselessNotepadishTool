@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace YACUNT
 {
@@ -29,10 +30,17 @@ namespace YACUNT
 
             var extension = Path.GetExtension(args[0]);
 
-            // TODO: Detect file type and launch appropriate viewer
-            //Application.Run(new Form1());
+            switch (extension)
+            {
+                case ".nfo":
+                    Application.Run(new UI.nfo(fileName));
 
-            MessageBox.Show("Opening format " + extension);
+                    break;
+
+                default:
+                    MessageBox.Show("Opening format " + extension + "\nFilename:" + fileName + "\nExtension:" + extension);
+                    break;
+            }                        
         }
 
         // TODO: option to register file handler with system
