@@ -14,7 +14,9 @@ Supported file types (last updated January 2015):
 --------------
 
 * .nfo
+
 * .ics (iCal)
+
 * .vcf
 
 It might be relatively small now but YACUNT is very flexible and will keep growing  as demand increases. With
@@ -28,6 +30,7 @@ Additional benefits:
 * YACUNT is specifically designed to be light-weight, portable and fit on most sticks easily. In the unlikely
  event that one stick is too small for YACUNT you can use a tool like (G-Split)[www.gdgsoft.com/gsplit] to spread
  it across more than one at a time.
+ 
 * YACUNT is regularly health checked and is guaranteed to have no worms and be completely free from any virus.
 
 This software is completely free and open source, so if you liked using YACUNT please spread it around. The more
