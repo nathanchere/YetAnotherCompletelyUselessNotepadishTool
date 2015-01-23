@@ -50,6 +50,7 @@
             this.btnOpenFile.TabIndex = 0;
             this.btnOpenFile.Text = "Open File";
             this.btnOpenFile.UseVisualStyleBackColor = true;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
             // label1
             // 

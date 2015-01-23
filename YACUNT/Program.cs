@@ -20,21 +20,30 @@ namespace YACUNT
 
             if (args.Length == 0)
             {
-                Application.Run(new frmDefault());
-                // Set file name if they chose to open a file, otherwise return
-                return;
+                var form = new frmDefault();
+                form.ShowDialog();
+                if (form.FileName != null)
+                {
+                    fileName = form.FileName;
+                }
+                else
+                    return;
             }
 
             fileName = fileName ?? args[0];
             if (!File.Exists(fileName)) return; // errors here
 
-            var extension = Path.GetExtension(args[0]);
+            var extension = Path.GetExtension(fileName);
 
             switch (extension)
             {
                 case ".nfo":
                     Application.Run(new UI.nfo(fileName));
+                    break;
 
+                case ".ics":
+                case ".ical":
+                    Application.Run(new UI.ics(fileName));
                     break;
 
                 default:

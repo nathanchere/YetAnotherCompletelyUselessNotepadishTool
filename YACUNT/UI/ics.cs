@@ -1,12 +1,12 @@
-﻿using System.IO;
+﻿using System;
 using System.Windows.Forms;
-using iCal;
+using YACUNT.Util;
 
 namespace YACUNT.UI
 {
     public partial class ics : Form
     {
-        private readonly iCalendar _calendar;
+        //private readonly iCalendar _calendar;
         private readonly string _fileName;
 
         public ics(string filename)
@@ -18,8 +18,20 @@ namespace YACUNT.UI
         }
 
         private void Open()
-        {           
-            var _calendar = iCalendar.LoadFromFile(_fileName);
+        {
+            try
+            {
+                var result = new iCalParser().ParseFile(_fileName);
+                if (result.CalendarList.Count == 0)
+                {
+                    MessageBox.Show("No calendars found");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to open file: " + ex.Message);
+            }
 
         }
 

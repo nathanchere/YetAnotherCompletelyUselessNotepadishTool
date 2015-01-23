@@ -17,6 +17,8 @@ namespace YACUNT
             InitializeComponent();
         }
 
+        public string FileName { get; private set; }    
+
         private void btnSetFileAssociations_Click(object sender, EventArgs e)
         {
             var extensions = new List<string>();
@@ -33,6 +35,14 @@ namespace YACUNT
             {
                 FileAssociationManager.SetAssociation(extension, Application.ExecutablePath, "YACUNT_" + extension, "Opened with YACUNT", true);
             }
+        }
+
+        private void btnOpenFile_Click(object sender, EventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            if(dialog.ShowDialog() != DialogResult.OK) return;
+            FileName = dialog.FileName;
+            Close();
         }
     }
 }
