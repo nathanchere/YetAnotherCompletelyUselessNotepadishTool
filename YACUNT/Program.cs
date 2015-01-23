@@ -38,12 +38,12 @@ namespace YACUNT
             switch (extension)
             {
                 case ".nfo":
-                    Application.Run(new UI.nfo(fileName));
+                    Application.Run(new Forms.nfo(fileName));
                     break;
 
                 case ".ics":
                 case ".ical":
-                    Application.Run(new UI.ics(fileName));
+                    Application.Run(new Forms.ics(fileName));
                     break;
 
                 default:
