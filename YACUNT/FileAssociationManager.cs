@@ -1,4 +1,6 @@
-﻿using Microsoft.Win32;
+﻿using System.Runtime.InteropServices;
+using System.Text;
+using Microsoft.Win32;
 
 namespace YACUNT
 {
@@ -7,6 +9,16 @@ namespace YACUNT
     /// </todo>
     public static class FileAssociationManager
     {
+        [DllImport("Kernel32.dll")]
+        private static extern uint GetShortPathName(string lpszLongPath, [Out]StringBuilder lpszShortPath, uint cchBuffer);
+        
+        private static string ToShortPathName(string longName)
+        {
+            var result = new StringBuilder(1000);
+            GetShortPathName(longName, result, (uint)result.Capacity);
+            return result.ToString();
+        }
+
         /// <summary>
         /// Create or update a file association in Windows
         /// </summary>
@@ -28,29 +40,36 @@ namespace YACUNT
             var ClassesRoot = isForAllUsers
                 ? Registry.ClassesRoot
                 : Registry.CurrentUser.OpenSubKey(@"Software\Classes");
+            
 
-            using (var key = ClassesRoot.CreateSubKey(fileExtension))
-            {
-                key.SetValue("", registryEntryId);
-            }
-
+            ClassesRoot.CreateSubKey("." + fileExtension).SetValue("", registryEntryId);            
+                           
             using (var key = ClassesRoot.CreateSubKey(registryEntryId))
             {
                 key.SetValue("", fileTypeDescription);
-                key.CreateSubKey("DefaultIcon").SetValue("", "\"" + executablePath + "\",0");
-
-                using (var subKey = key.CreateSubKey("Shell"))
-                {
-                    subKey.CreateSubKey("edit").CreateSubKey("command").SetValue("", "\"" + executablePath + "\"" + " \"%1\"");
-                    subKey.CreateSubKey("open").CreateSubKey("command").SetValue("", "\"" + executablePath + "\"" + " \"%1\"");
-                }
+                key.CreateSubKey("DefaultIcon").SetValue("", ToShortPathName(executablePath));
+                key.CreateSubKey(@"Shell\Open\Command").SetValue("", ToShortPathName(executablePath) + " \"%1\"");
+                key.CreateSubKey(@"Shell\Edit\Command").SetValue("", ToShortPathName(executablePath) + " \"%1\"");
             };
 
             var regPath = string.Format(@"Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.{0}", fileExtension);
             using (var key = Registry.CurrentUser.OpenSubKey(regPath, true))
             {
-                key.DeleteSubKey("UserChoice", false);
+                if (key != null) key.DeleteSubKey("UserChoice", false);
             }
+
+            //// Sanity check
+            //if(!IsAssociated("." + fileExtension)) System.Diagnostics.Debugger.Break();
+
+            //// Possibly use this to include current user entries even when applying to all
+            //if (isForAllUsers) SetAssociation(fileExtension, executablePath, registryEntryId, fileTypeDescription, false);
         }
+        
+        public static bool IsAssociated(string extension)
+        {
+            return (Registry.ClassesRoot.OpenSubKey(extension, false) != null);
+        }
+
     }
-}
+}     
+    
