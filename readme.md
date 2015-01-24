@@ -31,7 +31,7 @@ Additional benefits:
  event that one stick is too small for YACUNT you can use a tool like (G-Split)[www.gdgsoft.com/gsplit] to spread
  it across more than one at a time.
  
-* YACUNT is regularly health checked and is guaranteed to have no worms and be completely free from any virus.
+* Safety first! YACUNT and is regularly checked for worms, and is guaranteed to be virus-free.
 
 This software is completely free and open source, so if you liked using YACUNT please spread it around. The more
 people who are exposed to YACUNT the better and who knows, yours might be the one Tweet that puts YACUNT on
